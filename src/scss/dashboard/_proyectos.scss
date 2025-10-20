@@ -1,0 +1,196 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.no-proyectos {
+    a {
+        color: v.$indigo;
+    }
+}
+
+.listado-proyectos {
+    list-style: none;
+    padding: 0;
+    margin-top: 3rem;
+    @include m.grid(1, 2rem);
+
+    @include m.tablet {
+        @include m.grid(2, 2rem);
+    }
+
+    @include m.desktop {
+        @include m.grid(3, 2rem);
+    }
+
+    .proyecto {
+        background-color: lighten(v.$indigo, 5%);
+        min-height: 12rem;
+        display: flex;
+        align-items: center;
+        padding: 2rem;
+        line-height: 2;
+        border-radius: .5rem;
+
+        &:hover {
+            background-color: darken(v.$indigo, 5%);
+        }
+
+        a {
+            color: v.$blanco;
+        }
+    }
+}
+
+// === Botones de tareas ===
+.estado-tarea,
+.eliminar-tarea {
+    font-size: 1.4rem;        // texto más grande
+    padding: 1rem 2rem;       // hace los botones más grandes
+    border-radius: .5rem;
+    cursor: pointer;
+    border: none;
+    transition: background-color .3s ease;
+}
+
+// Estados de tarea
+.estado-tarea.pendiente {
+    background-color: lighten(v.$indigo, 10%);
+    color: v.$blanco;
+
+    &:hover {
+        background-color: darken(v.$indigo, 10%);
+    }
+}
+
+.estado-tarea.completa {
+    background-color: v.$verde; // si tienes un verde definido en variables
+    color: v.$blanco;
+
+    &:hover {
+        background-color: darken(v.$verde, 10%);
+    }
+}
+
+// Botón eliminar
+.eliminar-tarea {
+    background-color: v.$rojo; // asegúrate de tener rojo en tus variables
+    color: v.$blanco;
+
+    &:hover {
+        background-color: darken(v.$rojo, 10%);
+    }
+}
+
+
+
+
+
+
+
+/* === CONTENEDOR PRINCIPAL === */
+.swal2-popup {
+    border-radius: 1rem !important;
+    padding: 3rem !important;
+    background-color: v.$blanco !important;
+    box-shadow: 0 0 20px rgba(0,0,0,.15);
+    font-family: 'Poppins', sans-serif;
+}
+
+/* === TÍTULO === */
+.swal2-title {
+    font-size: 2.2rem !important;
+    color: v.$indigo !important;
+    font-weight: 700 !important;
+    margin-bottom: 1rem !important;
+}
+
+/* === TEXTO DEL MENSAJE === */
+.swal2-html-container {
+    font-size: 1.6rem !important;
+    color: v.$grisOscuro !important;
+    margin: 1rem 0 2rem 0 !important;
+}
+
+/* === ICONOS === */
+.swal2-icon.swal2-success {
+    border-color: lighten(v.$indigo, 10%) !important;
+    color: v.$indigo !important;
+}
+.swal2-icon.swal2-error {
+    border-color: #e74c3c !important;
+    color: #e74c3c !important;
+}
+.swal2-icon.swal2-warning {
+    border-color: #f39c12 !important;
+    color: #f39c12 !important;
+}
+.swal2-icon.swal2-info {
+    border-color: #3498db !important;
+    color: #3498db !important;
+}
+
+/* === BOTONES === */
+.swal-btn-confirm {
+    font-size: 1.6rem;
+    padding: 1rem 2.5rem;
+    border-radius: .5rem;
+    background-color: v.$indigo !important;
+    color: v.$blanco !important;
+    font-weight: bold;
+    border: none;
+    transition: background-color .2s ease;
+
+    &:hover {
+        background-color: darken(v.$cyan, 10%) !important;
+    }
+}
+
+.swal-btn-cancel {
+    font-size: 1.6rem;
+    padding: 1rem 2.5rem;
+    border-radius: .5rem;
+    background-color: v.$gris !important;
+    color: v.$blanco !important;
+    font-weight: bold;
+    border: none;
+    transition: background-color .2s ease;
+
+    &:hover {
+        background-color: darken(v.$gris, 10%) !important;
+    }
+}
+
+/* Popup */
+.swal-success-tarea-popup {
+    border-radius: 1rem !important;
+    padding: 3rem !important;
+    font-size: 1.6rem !important;
+}
+
+/* Título */
+.swal-success-tarea-title {
+    font-size: 2.2rem !important;
+    font-weight: 700 !important;
+    color: v.$indigo !important;
+}
+
+/* Texto */
+.swal-success-tarea-text {
+    font-size: 1.6rem !important;
+    color: v.$grisOscuro !important;
+}
+
+/* Botón confirmar */
+.swal-success-tarea-btn {
+    font-size: 1.6rem;
+    padding: 1rem 2.5rem;
+    border-radius: .5rem;
+    background-color: v.$indigo !important;
+    color: v.$blanco !important;
+    font-weight: bold;
+    border: none;
+    transition: background-color .2s ease;
+
+    &:hover {
+        background-color: darken(v.$indigo, 10%) !important;
+    }
+}
